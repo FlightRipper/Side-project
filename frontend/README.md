@@ -26,11 +26,11 @@ Build a web application with React and CSS (You can use any UI library). This ap
 3. **Meme Dashboard Page**:
 
    - Divide the page into section to add, update, delete articles.
-   
+
 4. **Login/Register Page**:
 
    - Allow the user to login or register.
-   
+
 5. **Responsiveness**:
 
    - Ensure the application works on mobile devices.
@@ -42,13 +42,13 @@ Build a web application with React and CSS (You can use any UI library). This ap
    - Implement a meme search functionality by text.
 
 2. **Sorting Feature**:
+
    - Allow users to sort memes by date created or alphabetically by text.
 
 3. **Download Feature**:
 
    - Allow users to download memes.
-  
-     
+
 ## Submission
 
 - After implementing the project, stage your changes, commit them, and push to your branch.
