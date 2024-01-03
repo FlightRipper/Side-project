@@ -52,6 +52,6 @@ app.use('/users', userRouter);
 app.use('/memes', memeRouter);
 
 //app connection
-server.listen(5000, () => {
-  console.log('app is running and listening on port 5000');
+server.listen(process.env.PORT, () => {
+  console.log('app is running and listening on port', process.env.PORT);
 });
