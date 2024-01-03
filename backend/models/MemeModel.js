@@ -16,7 +16,7 @@ const Meme = sequelize.define('Meme', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    }, 
+    },
     {
         timestamps: true,
     }

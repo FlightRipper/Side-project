@@ -31,7 +31,7 @@ class usersController {
 
         if (errors.length > 0) {
             return res.status(400).json({ errors });
-            }
+        }
     
         try {
             // Check if username or email already exists

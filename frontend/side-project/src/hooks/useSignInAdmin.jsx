@@ -5,12 +5,10 @@ import axios from 'axios';
 
 export const useSignInAdmin = () => {
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
   const navigate = useNavigate();
 
   const signInAdmin = async (username, password) => {
-    setLoading(true);
     setError(null);
 
     try {
@@ -25,14 +23,12 @@ export const useSignInAdmin = () => {
         navigate('/admin/home');
         setError('Authentication successful');
       } else {
-        setLoading(false);
         setError('Incorrect credentials (Check your username and password)');
       }
     } catch (error) {
-      setLoading(false);
       setError('An error occurred while trying to log in.');
     }
   };
 
-  return { signInAdmin, loading, error };
+  return { signInAdmin, error };
 };

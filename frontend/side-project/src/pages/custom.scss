@@ -43,15 +43,18 @@
 .signin-form-background{
   background-color: #e9e5e5;
 }
- body {
+
+body {
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
- }
+}
 
 .eye-icon{
   height: 20px !important;
   width: 20px !important;
-  margin-left: 95% !important;
+  margin-left: 96% !important;
+  margin-top: -4.2vh !important;
 }
+
 
 .animate-button {
   transition: transform 0.1s ease-in-out;
@@ -81,7 +84,7 @@
 }
 
 .password-input{
-  width: 95% !important;
+  width: 100% !important;
 }
 .form-control:focus::placeholder{
   color: transparent !important;
@@ -1096,5 +1099,35 @@ margin-left: auto;
 
 .Campaign-Edit-Form button{
   width: 200px;
+}
+
+.Registration{
+  background-color: #e9e5e5;
+}
+
+.DisplayAll-Container-Main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+ 
+
+.DisplayAll-Title{
+  font-family: "Signika";
+  font-weight: bold;
+  font-size: 3rem;
+  color: #abb1b1;
+}
+
+.DisplayAll-Cards-Container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  // align-content: center;
+  gap: 0 5%;
 }
 

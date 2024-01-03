@@ -4,24 +4,22 @@ import { useNavigate } from 'react-router-dom';
 
 export const useRegister = () => {
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
   const navigate = useNavigate()
 
-  const register = async (username, email, password, userType) => {
-    setLoading(true);
+  const register = async (username, password, userType) => {
     setError(null);
+    console.log(username, password, userType)
 
     const response = await fetch('http://localhost:5000/users/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, email, password, userType }),
+      body: JSON.stringify({ username, password, userType }),
     });
     const json = await response.json();
     
     if(!response.ok){
-        setLoading(false)
-        setError('Registration failed');
+      setError('Registration failed UserName might exist');
     }
     if(response.ok){
 
@@ -31,12 +29,10 @@ export const useRegister = () => {
         //update the context
         dispatch({type: 'LOGIN',payload: json})
 
-        setLoading(false)
-
         setError('Registration successful')
 
         navigate('/')
     }
   };
-  return {register, loading, error}
+  return {register, error}
 };

@@ -23,7 +23,7 @@ const SignInPage = () => {
   }
   const navigate = useNavigate();
 
-  const { signIn, error, loading } = useSignIn();
+  const { signIn, error } = useSignIn();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -60,7 +60,7 @@ const SignInPage = () => {
                 />
               </div>
 
-              <div className="mb-3">
+              <div >
                 <label
                   htmlFor="password"
                   className="form-label custom-label-headers-for-inputs"
@@ -74,9 +74,9 @@ const SignInPage = () => {
                 placeholder="Please enter your password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
-            />
-                <div className="eye-icon" onClick={togglePasswordVisibility}>
-                    {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
+                />
+                <div className="eye-icon mb-4" onClick={togglePasswordVisibility}>
+                  {showPassword ? <EyeOpenIcon /> : <EyeClosedIcon />}
                 </div>
                 <div
                   id="passwordHelpBlock"
@@ -102,7 +102,6 @@ const SignInPage = () => {
                 <button
                   type="submit"
                   className="btn btn-primary w-50 animate-button"
-                  disabled={loading}
                 >
                   Submit
                 </button>

@@ -16,7 +16,7 @@ Build a web application with React and CSS (You can use any UI library). This ap
 
    - A page to display all the created memes.
    - A page for adding, updating, or deleting memes(Dashboard).
-   - A login/register page.
+   - A login/register page. // Done
 
 2. **Meme Display Page**:
 

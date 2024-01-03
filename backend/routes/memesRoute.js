@@ -6,19 +6,22 @@ import protectCreator from '../middlewares/creatorProtectMiddleware.js';
 
 const memeRouter = express.Router();
 
-// Create a new campaign
+// Create a new meme
 memeRouter.post('/:userId', protect, upload.single('image'), memesController.createMeme);
 
-// Get all campaigns
+// Get all meme
 memeRouter.get('/', memesController.getAllMemes);
 
-//get a campaign by ID
+// Get all meme Created by user for the admin panel
+memeRouter.get('/:id', memesController.getAllMemesByUser);
+
+//get a meme by ID
 memeRouter.get('/:id', memesController.findMemeById);
 
-//update campaign
+//update meme
 memeRouter.patch('/:id', protectCreator, upload.single('image'), memesController.updateMeme);
 
-//delete a campaign
+//delete a meme
 memeRouter.delete('/:id', protectCreator, memesController.deleteMeme);
 
 export default memeRouter;

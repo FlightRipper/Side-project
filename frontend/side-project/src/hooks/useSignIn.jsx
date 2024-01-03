@@ -4,12 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 export const useSignIn = () => {
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
   const { dispatch } = useAuthContext();
   const navigate = useNavigate()
 
   const signIn = async (username, password) => {
-    setLoading(true);
     setError(null);
 
     const response = await fetch('http://localhost:5000/users/login', {
@@ -21,11 +19,9 @@ export const useSignIn = () => {
 
     
     if(!response.ok){
-        setLoading(false)
         setError('Incorrect credentials (Check your username and password)');
     }
     if(response.ok){
-        setLoading(false)
 
         //save the user to the local storage
         localStorage.setItem('user', JSON.stringify(json))
@@ -36,8 +32,8 @@ export const useSignIn = () => {
         
         setError('Authentication successful');
         
-        navigate('/')
+        navigate('/displayAll')
     }
   };
-  return {signIn, loading, error}
+  return {signIn, error}
 };
