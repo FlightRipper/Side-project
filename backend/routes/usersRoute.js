@@ -11,9 +11,6 @@ userRouter.post('/register', usersController.createUser);
 //login user
 userRouter.post('/login', usersController.loginUser);
 
-//login admin
-userRouter.post('/Adminlogin', usersController.loginCreator);
-
 // Get all users
 userRouter.get('/', protectCreator, usersController.getAllUsers);
 
@@ -21,9 +18,6 @@ userRouter.get('/', protectCreator, usersController.getAllUsers);
 userRouter.get('/:id', protect, usersController.findUserById);
 
 //update user
-userRouter.patch('/:id', protect, usersController.updateUser);
-
-//delete a user
-userRouter.delete('/:id', protect, usersController.deleteUser);
+userRouter.patch('/:id', protectCreator, usersController.updateUser);
 
 export default userRouter;

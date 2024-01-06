@@ -164,44 +164,6 @@ class usersController {
         }
     }
 
-    // login creator
-    static async loginCreator(req, res) {
-        try {
-        const { username, password } = req.body;
-
-        const errors = [];
-        let user;
-        let match;
-
-        if (!username || !password) {
-            errors.push("Please Fill all required fields");
-        } else {
-            user = await User.findOne({ where: { username } });
-            if (!user) {
-            errors.push("user not found");
-            } else {
-            match = await bcrypt.compare(password, user.password);
-            if (!match) {
-                errors.push("incorrect password");
-            }
-            }
-        }
-
-        if (user.userType != "memeCreator") {
-            return res.status(400).json("You don't have permission to access this page");
-        }
-
-        if (errors.length > 0) {
-            return res.status(400).json({ errors });
-        }
-
-        const token = createToken(user.id);
-        return res.status(200).json({ username, userType:user.userType, token, balance:user.balance });
-        } catch (error) {
-        return res.status(500).json({ message: error.message });
-        }
-    }
-
 }
 
 export default usersController;

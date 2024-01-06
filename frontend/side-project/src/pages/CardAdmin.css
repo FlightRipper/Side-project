@@ -1,0 +1,156 @@
+.card {
+  --font-color: #323232;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  /* box-shadow: -9px 9px 18px #5a5a5a,
+              9px -9px 18px #727272; */
+  display: flex;
+  flex-direction: column;
+  transition: .4s;
+  position: relative;
+  background-color: #d1cccc !important;
+  margin-top: 30px !important;
+  z-index: 0;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px 2px #5a5a5a;
+  z-index: 1;
+}
+
+.card__img {
+  width: 248px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.card__descr-wrapper {
+  padding: 15px;
+  display: grid;
+}
+
+.card__title {
+  color: var(--font-color);
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 900;
+  font-size: 16px;
+  max-width: 80;
+}
+
+.card__descr {
+  color: var(--font-color);
+}
+
+.card__buttons{
+  display:flex;
+  gap: 10%;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-Update {
+  --color: #4e58ca;
+  /* padding: 0.8em 1.7em; */
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  /* font-weight: 400; */
+  border: 1px solid;
+  font-family: "Signika" !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+}
+
+.button-Update::before, .button-Update::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+ 
+.button-Update::before {
+  top: -1em;
+  left: -1em;
+}
+ 
+.button-Update::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+ 
+.button-Update:hover::before, .button-Update:hover::after {
+  height: 410px;
+  width: 410px;
+}
+ 
+.button-Update:hover {
+  color: rgb(253, 253, 253);
+}
+ 
+.button-Update:active {
+  filter: brightness(.8);
+}
+
+/* Delete */
+ 
+.button-Delete::before, .button-Delete::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+ 
+.button-Delete::before {
+  top: -1em;
+  left: -1em;
+}
+ 
+.button-Delete::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+ 
+.button-Delete:hover::before, .button-Delete:hover::after {
+  height: 410px;
+  width: 410px;
+}
+ 
+.button-Delete:hover {
+  color: rgb(250, 247, 247);
+}
+ 
+.button-Delete:active {
+  filter: brightness(.8);
+}
+
+.SubmitButton{
+  margin-left: 40% !important;
+  background-color: green !important;
+}
+
+.SubmitButton:hover{
+  background-color: rgb(0, 83, 0) !important;
+}

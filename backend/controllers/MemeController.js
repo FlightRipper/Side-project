@@ -48,10 +48,17 @@ class memesController {
 
     static async getAllMemesByUser(req, res) {
         try {
-            const userId = req.params.userId;
+            console.log(req.params)
+            const userid = req.params.id
+            const user = await User.findByPk(userid);
+            // console.log(req.params.userId)
+            console.log("jon")
+            if (!user) {
+                return res.status(404).json('User not found');
+            }
             const memes = await Meme.findAll({
                 where: {
-                    userId: userId
+                    UserId: userid
                 },
                 include: [
                 { model: User, attributes: ['username'] },
@@ -71,6 +78,7 @@ class memesController {
         try {
         const oldMeme = await Meme.findByPk(req.params.id);
         const oldImage = oldMeme.image;
+        console.log(req.body)
 
         const newData = { ...req.body };
 
@@ -107,8 +115,9 @@ class memesController {
     //delete meme
     static async deleteMeme(req, res) {
         try {
+        console.log(req.params.id)
         const deletedMeme = await Meme.findByPk(req.params.id)
-        
+        // console.log(req.params.id)
         if (!deletedMeme) {
             return res.status(404).json('Meme was not found');
         }

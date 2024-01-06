@@ -24,6 +24,34 @@
   border: none !important;
   font-family: "Signika" !important;
 }
+
+.button-Delete {
+  --color: #b93939;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  // font-weight: 24px;
+  font-size: 20px;
+  border: 1px solid;
+  font-family: "Signika" !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+}
+
+// .custom-h1-style{
+//   font-family: "Signika" !important;
+//   font-weight: bold !important;
+//   font-size: 3rem !important;
+//   color: #2b3030 !important;
+// }
+
 .btn-primary:hover {
   background-color: var(--bs-hover-color) !important;
 }
@@ -1123,10 +1151,42 @@ margin-left: auto;
 .DisplayAll-Cards-Container{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   justify-content: center;
-  // align-content: center;
   gap: 0 5%;
+  height: 40%;
 }
 
+@media only screen and (max-width: 1300px) {
+  .DisplayAll-Cards-Container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 0 auto;
+      justify-content: center;
+      gap: 0 4.2%;
+      border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .DisplayAll-Cards-Container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      margin: 0 auto;
+      justify-content: center;
+      gap: 0 4.2%;
+      border-radius: 12px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  .DisplayAll-Cards-Container{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 auto;
+      justify-content: center;
+      gap: 0 4.2%;
+      border-radius: 12px;
+  }
+}

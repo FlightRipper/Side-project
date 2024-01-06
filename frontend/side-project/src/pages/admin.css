@@ -1,0 +1,122 @@
+.admin-Main{
+    background-color: black;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Dashboard-outside{
+    width: 60%;
+    height: 60%;
+}
+
+.admin-Main-Create {
+    --color: #078007;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    border: 1px solid;
+    font-family: "Signika" !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+    width: 10%;
+    height: 100%;
+}
+   
+.admin-Main-Create::before, .admin-Main-Create::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.admin-Main-Create::before {
+    top: -1em;
+    left: -1em;
+}
+
+.admin-Main-Create::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.admin-Main-Create:hover::before, .admin-Main-Create:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.admin-Main-Create:hover {
+    color: rgb(253, 253, 253);
+}
+
+.admin-Main-Create:active {
+    filter: brightness(.8);
+}
+   
+
+.DisplayAllAdmin-Cards-Container{
+    /* background-color:rgb(75, 73, 73); */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    justify-content: center;
+    gap: 0 4.2%;
+    /* width: 100%; */
+    border-radius: 12px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .DisplayAllAdmin-Cards-Container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        justify-content: center;
+        gap: 0 4.2%;
+        border-radius: 12px;
+    }
+    .admin-Main-Create{
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .DisplayAllAdmin-Cards-Container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        justify-content: center;
+        gap: 0 4.2%;
+        border-radius: 12px;
+    }
+    .admin-Main-Create{
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+    .DisplayAllAdmin-Cards-Container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        justify-content: center;
+        gap: 0 4.2%;
+        border-radius: 12px;
+    }
+    .admin-Main-Create{
+        width: 30%;
+    }
+}
+ 
