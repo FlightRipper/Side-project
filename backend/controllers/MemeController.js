@@ -46,6 +46,7 @@ class memesController {
         }
     }
 
+
     static async getAllMemesByUser(req, res) {
         try {
             console.log(req.params)
