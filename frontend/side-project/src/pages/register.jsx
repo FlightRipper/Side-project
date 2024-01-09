@@ -87,7 +87,7 @@ const RegisterPage = () => {
                   <option value="memeCreator">
                     A Meme Creator (Can create memes)
                   </option>
-                  <option value="user">
+                  <option value="viewer">
                     A user (Can Explore memes)
                   </option>
                 </select>

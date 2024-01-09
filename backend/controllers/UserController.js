@@ -13,6 +13,7 @@ class usersController {
     static async createUser(req, res) {
         try {
         const { password, username, userType } = req.body;
+        console.log(userType);
         const errors = [];
 
         if (!password) {
